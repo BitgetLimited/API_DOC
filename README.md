@@ -1,0 +1,1 @@
+BitgetLimited的文档请参考[wiki](https://github.com/BitgetLimited/API_DOC/wiki)

@@ -5,9 +5,9 @@
  # REST行情、交易API<br>
  >  **适用于BitGet站**<br>
 
-* [REST API简介](REST_introduction)<br>
-* [签名认证(重要，请仔细阅读)](REST_authentication)<br>
-* [请求说明(一定要看)](REST_request)<br>
-* [API Reference](REST_api_reference)<br>
-* [错误代码](REST_error_code)<br>
+* [REST API简介](https://github.com/BitgetLimited/API_DOC/wiki/REST_introduction)<br>
+* [签名认证(重要，请仔细阅读)](https://github.com/BitgetLimited/API_DOC/wiki/REST_authentication)<br>
+* [请求说明(一定要看)](https://github.com/BitgetLimited/API_DOC/wiki/REST_request)<br>
+* [API Reference](https://github.com/BitgetLimited/API_DOC/wiki/REST_api_reference)<br>
+* [错误代码](https://github.com/BitgetLimited/API_DOC/wiki/REST_error_code)<br>
 * [代码示例](https://github.com/BitgetLimited/Exchange_API)<br>

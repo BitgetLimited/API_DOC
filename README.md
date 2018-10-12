@@ -2,6 +2,14 @@
  
  BitgetLimited 的文档请参考 [wiki](https://github.com/BitgetLimited/API_DOC/wiki)
  
+ # WebSocket行情，资产和交易推送API<br>
+ 
+ * [WebSocket API简介]()
+ * [请求与订阅说明]()
+ * [API Reference]()
+ * [错误代码]()
+ * [代码示例]()
+
  # REST行情、交易API<br>
  >  **适用于BitGet站**<br>
 

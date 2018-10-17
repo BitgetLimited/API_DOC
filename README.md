@@ -4,11 +4,11 @@
  
  # WebSocket行情，资产和交易推送API<br>
  
- * [WebSocket API简介]()
- * [请求与订阅说明]()
- * [API Reference]()
- * [错误代码]()
- * [代码示例]()
+ * [WebSocket API简介](https://github.com/BitgetLimited/API_DOC/wiki/WS_introduction)
+ * [请求与订阅说明](https://github.com/BitgetLimited/API_DOC/wiki/WS_request)
+ * [API Reference](https://github.com/BitgetLimited/API_DOC/wiki/WS_api_reference)
+ * [错误代码](https://github.com/BitgetLimited/API_DOC/wiki/WS_error_code)
+ * [代码示例](https://github.com/BitgetLimited/API_DOC/wiki/WS_API)
 
  # REST行情、交易API<br>
  >  **适用于BitGet站**<br>

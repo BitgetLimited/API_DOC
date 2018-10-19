@@ -8,7 +8,7 @@
  * [请求与订阅说明](https://github.com/BitgetLimited/API_DOC/wiki/WS_request)
  * [API Reference](https://github.com/BitgetLimited/API_DOC/wiki/WS_api_reference)
  * [错误代码](https://github.com/BitgetLimited/API_DOC/wiki/WS_error_code)
- * [代码示例](https://github.com/BitgetLimited/API_DOC/wiki/WS_API)
+ * [代码示例](https://github.com/BitgetLimited?tab=repositories)
 
  # REST行情、交易API<br>
  >  **适用于BitGet站**<br>

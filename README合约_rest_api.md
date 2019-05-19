@@ -10,4 +10,4 @@
 * [合约交易请求说明(一定要看)](https://github.com/BitgetLimited/API_DOC/wiki/Contract_REST_request)<br>
 * [合约交易API Reference](https://github.com/BitgetLimited/API_DOC/wiki/Contract_REST_api_reference)<br>
 * [合约交易错误代码](https://github.com/BitgetLimited/API_DOC/wiki/Contract_REST_error_code)<br>
-* [合约交易代码示例](https://github.com/BitgetLimited/Exchange_API)<br>
+* [合约交易代码示例](https://github.com/BitgetLimited/Exchange_API/tree/master/REST-Contract-Java-Demo)<br>

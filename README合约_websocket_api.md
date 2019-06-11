@@ -10,7 +10,7 @@ WebSocket是HTML5一种新的协议(Protocol)。它实现了客户端与服务�
 - 不需要多次创建TCP请求和销毁，节约宽带和服务器的资源。
 
 ### 强烈建议开发者使用WebSocket API获取市场行情和买卖深度等信息。
-地址：wss://websocket.bitget.com:10442/ws/v1
+地址：wss://contractsocketapi.thewebsocket.com/ws/v1
 
 连接说明：
 
@@ -96,7 +96,7 @@ response:
 > {"event":"login","success":"true"}
 
 例：
-> {"op":"login","args":["985d5b66-57ce-40fb-b714-afc0b9787083","1538054050.975","7L+zFQ+CEgGu5rzCj4+BdV2/uUHGqddA9pI6ztsRRPs="]}
+> {"op":"login","args":["985d5b66-57ce-40fb-b714-afc0b9787083","1538054050975","7L+zFQ+CEgGu5rzCj4+BdV2/uUHGqddA9pI6ztsRRPs="]}
 
 **access_key**:为用户申请的ACCESS_KEY
 

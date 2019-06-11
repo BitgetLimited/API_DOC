@@ -2,7 +2,7 @@
  
  BitgetLimited 的文档请参考 [wiki](https://github.com/BitgetLimited/API_DOC/wiki)
  
- # WebSocket行情，资产和交易推送API<br>
+ # 币币WebSocket行情，资产和交易推送API<br>
  
  * [WebSocket API简介](https://github.com/BitgetLimited/API_DOC/wiki/WS_introduction)
  * [请求与订阅说明](https://github.com/BitgetLimited/API_DOC/wiki/WS_request)
@@ -20,7 +20,10 @@
 * [错误代码](https://github.com/BitgetLimited/API_DOC/wiki/REST_error_code)<br>
 * [代码示例](https://github.com/BitgetLimited/Exchange_API)<br>
 
-
+# 合约WebSocket行情，资产和交易推送API<br>
+ 
+ * [WebSocket API](https://github.com/BitgetLimited/API_DOC/blob/master/README%E5%90%88%E7%BA%A6_websocket_api.md)
+ 
  # 合约交易REST行情、交易API<br>
  >  **适用于BitGet站**<br>
 

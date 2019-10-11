@@ -34,6 +34,17 @@ args: 取值为频道名，可以定义一个或者多个频道
 > {"event":"error","message":"<error_message>","errorCode":"<errorCode>"}
 
 -
+# 交易对格式
+反向合约(示例):
+> btcusd、ethusd、ltcusd、xrpusd、bchusd、eosusd
+
+正向合约(示例):
+> cmt_bnbusdt、cmt_btcusdt
+
+3.模拟盘合约(示例):
+> sbtcusd（反向合约模拟盘）、cmt_btcsusdt（正向合约模拟盘）
+
+-
 # 订阅
 用户可以选择订阅一个或者多个频道，多个频道总长度不能超过4096个字节
 > {"op": "subscribe", "args": ["`<SubscriptionTopic>`"]}
@@ -47,25 +58,25 @@ args 数组内容为频道名称 ：<channelname>:<filter>
 永续推送业务business为swap， channel为此业务下每个具体的名称，如果channel的名字不能以一个字母区分将会以 " _ " 进行连接
 
 例：
-> "swap/ticker:BTC-USD-SWAP" or "swap/price_range:BTC-USD-SWAP"
+> "swap/ticker:btcusd" or "swap/price_range:btcusd"
 
 filter 是可筛选数据，具体参考每个频道说明
 
 示例：
 
 send:
-> {"op": "subscribe", "args": ["swap/ticker:BTC-USD-SWAP", "swap/candle60s:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/ticker:btcusd", "swap/candle60s:btcusd"]}
 
 response:
 > 
-> {"event": subscribe,"channel":"swap/ticker:BTC-USD-SWAP"}
+> {"event": subscribe,"channel":"swap/ticker:btcusd"}
 
-> {"event": subscribe,"channel":"swap/candle60s:BTC-USD-SWAP"}
+> {"event": subscribe,"channel":"swap/candle60s:btcusd"}
 > 
-> {"table":"swap/ticker","data":[{"high_24h":"3369","instrument_id":"BTC-USD-SWAP","last":"3299",
+> {"table":"swap/ticker","data":[{"high_24h":"3369","instrument_id":"btcusd","last":"3299",
  "low_24h":"3112","timestamp":"2018-12-09T08:12:04.659Z","volume_24h":"8389225"}]}
  
-> {"table":"swap/candle60s","data":[{"instrument_id":"BTC-USD-SWAP","candle":["2018-12-09T08:12:00.000Z",
+> {"table":"swap/candle60s","data":[{"instrument_id":"btcusd","candle":["2018-12-09T08:12:00.000Z",
  "3299.8","3299.8","3299","3299","82","2.4854"]}]}
 >
 
@@ -77,12 +88,12 @@ response:
 例如：
 
 请求：
-> {"op": "unsubscribe", "args": ["swap/ticker:BTC-USD-SWAP", "swap/candle60s:BTC-USD-SWAP"]}
+> {"op": "unsubscribe", "args": ["swap/ticker:btcusd", "swap/candle60s:btcusd"]}
 
 返回：
 >
-> {"event":"unsubscribe","channel":"swap/ticker:BTC-USD-SWAP"}
-> {"event":"unsubscribe","channel":"swap/candle60s:BTC-USD-SWAP"}
+> {"event":"unsubscribe","channel":"swap/ticker:btcusd"}
+> {"event":"unsubscribe","channel":"swap/candle60s:btcusd"}
 >
 
 -
@@ -177,9 +188,9 @@ swap/order //用户交易数据频道
 获取用户持仓信息，需用用户登录
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/position:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/position:btcusd"]}
 
-其中swap/ position为频道名，BTC-USD-SWAP为instrument_id
+其中swap/ position为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
@@ -224,7 +235,7 @@ margin_mode | String | fixed:逐仓crossed:全仓 |
             "side": "short",<br>
             "timestamp": "1559544244016"<br>
         }],<br>
-        "instrument_id": "XRP-USD-SWAP",<br>
+        "instrument_id": "xrpusd",<br>
         "margin_mode": "crossed"<br>
     }]<br>
 }<br>
@@ -234,9 +245,9 @@ margin_mode | String | fixed:逐仓crossed:全仓 |
 获取账户信息，需用用户登录
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/account:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/account:btcusd"]}
 
-其中swap/account为频道名，BTC-USD-SWAP为instrument_id
+其中swap/account为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
@@ -258,7 +269,7 @@ margin_mode | String | 账户类型：逐仓fixed 全仓crossed |
     "data": [{<br>
         "equity": "21.9334",<br>
         "fixed_balance": "0.0000",<br>
-        "instrument_id": "XRP-USD-SWAP",<br>
+        "instrument_id": "xrpusd",<br>
         "margin": "6.8129",<br>
         "margin_frozen": "6.8143",<br>
         "margin_mode": "crossed",<br>
@@ -274,14 +285,14 @@ margin_mode | String | 账户类型：逐仓fixed 全仓crossed |
 获取用户交易数据，需用用户登录
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/order:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/order:btcusd"]}
 
-其中swap/order为频道名，BTC-USD-SWAP为instrument_id
+其中swap/order为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
 ----------- | ----------- | ----------- |
-instrument_id | String | 合约名称，如BTC-USD-SWAP |
+instrument_id | String | 合约名称，如btcusd |
 size | String | 委托数量 |
 timestamp | String | 创建时间 |
 filled_qty | String | 成交数量 |
@@ -307,7 +318,7 @@ state | String | 订单状态("1":新单,"2":部分成交,"3":全部成交 ,"5":
         "last_fill_qty": "0",<br>
         "price_avg": "0.0000",<br>
         "type": "2",<br>
-        "instrument_id": "XRP-USD-SWAP",<br>
+        "instrument_id": "xrpusd",<br>
         "last_fill_px": "0",<br>
         "size": "1",<br>
         "price": "0.2935",<br>
@@ -326,14 +337,14 @@ state | String | 订单状态("1":新单,"2":部分成交,"3":全部成交 ,"5":
 获取平台全部永续合约的最新成交价、买一价、卖一价和24交易量
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/ticker:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/ticker:btcusd"]}
 
-其中swap/ticker为频道名，BTC-USD-SWAP为instrument_id
+其中swap/ticker为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
 ----------- | ----------- | ----------- |
-instrument_id | String | 合约名称，如BTC-USD-SWAP |
+instrument_id | String | 合约名称，如btcusd |
 best_bid | String | 买一价 |
 best_ask | String | 卖一价 |
 last | String | 最新成交价 |
@@ -349,7 +360,7 @@ timestamp | String | 系统时间戳 |
         "best_ask": "5603.5",<br>
         "best_bid": "5600.1",<br>
         "high_24h": "5773.7",<br>
-        "instrument_id": "BTC-USD-SWAP",<br>
+        "instrument_id": "btcusd",<br>
         "last": "5603.3",<br>
         "low_24h": "5566",<br>
         "timestamp": "1559544244016",<br>
@@ -382,9 +393,9 @@ swap/candle86400s // 1dayk线数据频道
 swap/candle604800s // 1week k线数据频道
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/candle60s:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/candle60s:btcusd"]}
 
-其中swap/candle60s为频道名，BTC-USD-SWAP为instrument_id
+其中swap/candle60s为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
@@ -395,13 +406,13 @@ high | String | 最高价格 |
 low | String | 最低价格 |
 close | String | 收盘价格 |
 volume | String | 交易量(张) |
-instrument_id | String | 合约BTC-USD-SWAP |
+instrument_id | String | 合约btcusd |
 
 ### # 返回示例
 > {<br>
     "table": "swap/candle60s",<br>
     "data": [{<br>
-        "instrument_id": "BTC-USD-SWAP",<br>
+        "instrument_id": "btcusd",<br>
         "candle": ["1559544244016", "5613", "5613", "5611.9", "5611.9", "1218", "21.7009"]<br>
     }]<br>
 }<br>
@@ -411,9 +422,9 @@ instrument_id | String | 合约BTC-USD-SWAP |
 获取最近的成交数据。
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/trade:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/trade:btcusd"]}
 
-其中swap/trade为频道名，BTC-USD-SWAP为instrument_id
+其中swap/trade为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
@@ -422,13 +433,13 @@ price | String | 成交价格 |
 size | String | 成交数量 |
 side | String | 成交方向（buy or sell） |
 timestamp | String | 成交时间 |
-instrument_id | String | BTC-USD-SWAP |
+instrument_id | String | btcusd |
 
 ### # 返回示例
 > {<br>
-	 "table": "swap/trade",<br>
+     "table": "swap/trade",<br>
     "data": [{<br>
-        "instrument_id": "BTC-USD-SWAP",<br>
+        "instrument_id": "btcusd",<br>
         "price": "5611.9",<br>
         "side": "buy",<br>
         "size": "2",<br>
@@ -441,14 +452,14 @@ instrument_id | String | BTC-USD-SWAP |
 获取合约资金费率
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/funding_rate:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/funding_rate:btcusd"]}
 
-其中swap/funding_rate为频道名，BTC-USD-SWAP为instrument_id
+其中swap/funding_rate为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
 ----------- | ----------- | ----------- |
-instrument_id | String | 合约名称，如BTC-USD-SWAP |
+instrument_id | String | 合约名称，如btcusd |
 funding_time | String | 下一次结算时间 |
 funding_rate | String | 当前资金费率 |
 
@@ -458,7 +469,7 @@ funding_rate | String | 当前资金费率 |
     "data": [{<br>
         "funding_rate": "-0.00067",<br>
         "funding_time": "1559544244016",<br>
-        "instrument_id": "BTC-USD-SWAP",<br>
+        "instrument_id": "btcusd",<br>
     }]<br>
 }<br>
 
@@ -467,16 +478,16 @@ funding_rate | String | 当前资金费率 |
 获取合约当前开仓的最高买价和最低卖价。
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/price_range:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/price_range:btcusd"]}
 
-其中swap/ price_range为频道名，BTC-USD-SWAP为instrument_id
+其中swap/ price_range为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
 ----------- | ----------- | ----------- |
 timestamp | String | 系统时间戳 |
 lowest | String | 最低卖价 |
-instrument_id | String | 合约名称，如BTC-USD-SWAP |
+instrument_id | String | 合约名称，如btcusd |
 highest | String | 最高买价 |
 
 ### # 返回示例
@@ -484,7 +495,7 @@ highest | String | 最高买价 |
     "table": "swap/price_range",<br>
     "data": [{<br>
         "highest": "5665.9",<br>
-        "instrument_id": "BTC-USD-SWAP",<br>
+        "instrument_id": "btcusd",<br>
         "lowest": "5553.6",<br>
         "timestamp": "1559544244016"<br>
     }]<br>
@@ -495,9 +506,9 @@ highest | String | 最高买价 |
 每次返回前五档的深度数据
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/depth5:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/depth5:btcusd"]}
 
-其中swap/depth5为频道名，BTC-USD-SWAP为instrument_id
+其中swap/depth5为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
@@ -527,7 +538,7 @@ instrument_id | String | 合约ID |
             ["5621", "26"],<br>
             ["5620.9", "640"]<br>
         ],<br>
-        "instrument_id": "BTC-USD-SWAP",<br>
+        "instrument_id": "btcusd",<br>
         "timestamp": "1559544244016"<br>
     }]<br>
 }<br>
@@ -537,9 +548,9 @@ instrument_id | String | 合约ID |
 首次返回200档，后续为增量
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/depth:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/depth:btcusd"]}
 
-其中swap/depth为频道名，BTC-USD-SWAP为instrument_id
+其中swap/depth为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
@@ -570,7 +581,7 @@ instrument_id | String | 合约ID |
             ["5621", "26"],<br>
             ["5620.9", "640"]<br>
         ],<br>
-        "instrument_id": "BTC-USD-SWAP",<br>
+        "instrument_id": "btcusd",<br>
         "timestamp": "1559544244016"<br>
     }]<br>
 }<br>
@@ -580,14 +591,14 @@ instrument_id | String | 合约ID |
 获取标记价格
 
 ### send示例
-> {"op": "subscribe", "args": ["swap/mark_price:BTC-USD-SWAP"]}
+> {"op": "subscribe", "args": ["swap/mark_price:btcusd"]}
 
-其中swap/ mark_price为频道名，BTC-USD-SWAP为instrument_id
+其中swap/ mark_price为频道名，btcusd为instrument_id
 
 ### # 返回参数
 参数名 | 参数类型 | 描述 |
 ----------- | ----------- | ----------- |
-instrument_id | String | 合约名称，如BTC-USD-SWAP |
+instrument_id | String | 合约名称，如btcusd |
 mark_price | String | 标记价格 |
 timestamp | String | 系统时间戳 |
 
@@ -595,7 +606,7 @@ timestamp | String | 系统时间戳 |
 > {<br>
     "table": "swap/mark_price",<br>
     "data": [{<br>
-        "instrument_id": "BTC-USD-SWAP",<br>
+        "instrument_id": "btcusd",<br>
         "mark_price": "5620.9",<br>
         "timestamp": "1559544244016"<br>
     }]<br>

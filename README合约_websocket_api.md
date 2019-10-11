@@ -557,6 +557,7 @@ instrument_id | String | 合约ID |
 ----------- | ----------- | ----------- |
 asks | String | 卖方深度 |
 bids | String | 买方深度 |
+action | String | 全量增量标识 |
 timestamp | String | 时间戳 |
 instrument_id | String | 合约ID |
 
@@ -566,6 +567,7 @@ instrument_id | String | 合约ID |
 > 首次200档<br><br>
 {<br>
     "table": "swap/depth",<br>
+    "action": "(partial/update)",<br>
     "data": [{<br>
         "asks": [<br>
             ["5621.7", "58"],<br>

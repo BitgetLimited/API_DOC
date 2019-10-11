@@ -41,7 +41,7 @@ args: 取值为频道名，可以定义一个或者多个频道
 正向合约(示例):
 > cmt_bnbusdt、cmt_btcusdt
 
-3.模拟盘合约(示例):
+模拟盘合约(示例):
 > sbtcusd（反向合约模拟盘）、cmt_btcsusdt（正向合约模拟盘）
 
 -

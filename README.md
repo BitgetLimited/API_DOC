@@ -17,7 +17,7 @@
  * [WebSocket API](https://github.com/BitgetLimited/API_DOC/blob/master/README%E5%90%88%E7%BA%A6_websocket_api.md)
  
  # 合约交易REST行情、交易API<br>
- >  **适用于BitGet站，[新版REST API](https://bitgetlimited.github.io/apidoc/zh/swap)**<br>
+ >  **适用于BitGet站，【[新版REST API]】(https://bitgetlimited.github.io/apidoc/zh/swap)**<br>
 
 * [合约交易REST API简介](https://github.com/BitgetLimited/API_DOC/wiki/Contract_REST_introduction)<br>
 * [合约交易签名认证(重要，请仔细阅读)](https://github.com/BitgetLimited/API_DOC/wiki/Contract_REST_authentication)<br>

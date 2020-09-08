@@ -115,7 +115,12 @@ response:
 
 **sign**:用户计算签名的基于哈希的协议，此处使用SHA1的SecretKey和请求参数进行MD5加密的结果作为取值
 
-**sign示例参考**: [api参考](https://github.com/BitgetLimited/API_DOC/wiki/REST_authentication)
+**sign示例如下:
+    比如这个请求：https://api.bitget.com/api/v1/account/accounts?method=accounts&accesskey=ak4****d4&sign=7c8*****f1c&req_time=1529137093705
+     步骤
+        1 请求参数method=xxx作为字符串  如："method=accounts"
+        2 使用SHA1加密后的SecretKey
+        3 然后将这个两个参数进行MD5加密的结果作为签名值
 
 如果登录失败会自动断开链接
 

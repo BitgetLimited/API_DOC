@@ -107,7 +107,7 @@ response:
 > {"event":"login","success":"true"}
 
 例：
-> {"op":"login","args":["985d5b66-57ce-40fb-b714-afc0b9787083","1538054050975","7L+zFQ+CEgGu5rzCj4+BdV2/uUHGqddA9pI6ztsRRPs="]}
+> {"op":"login","args":["985d5b66-57ce-40fb-b714-afc0b9787083","1538054050975","aa5d1fe018df5c35492d0ee5670fd4da"]}
 
 **access_key**:为用户申请的ACCESS_KEY
 
@@ -115,12 +115,12 @@ response:
 
 **sign**:用户计算签名的基于哈希的协议，此处使用SHA1的SecretKey和请求参数进行MD5加密的结果作为取值
 
-**sign示例如下:**
-    比如这个请求：https://api.bitget.com/api/v1/account/accounts?method=accounts&accesskey=ak4****d4&sign=7c8*****f1c&req_time=1529137093705
-  **步骤**
-        1 请求参数method=xxx作为字符串  如："method=accounts"
-        2 使用SHA1加密后的SecretKey
-        3 然后将这个两个参数进行MD5加密的结果作为签名值
+**sign示例如下:**  将以下两个参数传入加密哈希函数(MD5)
+1 要进行签名的字符串
+    "method=accounts"
+2 使用SHA1加密后的SecretKey
+    2a72********a5c6a6dafc2
+3 然后将这个两个参数进行MD5加密的结果作为签名值
 
 如果登录失败会自动断开链接
 

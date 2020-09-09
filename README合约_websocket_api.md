@@ -116,10 +116,14 @@ response:
 **sign**:用户计算签名的基于哈希的协议，此处使用SHA1的SecretKey和请求参数进行MD5加密的结果作为取值
 
 **sign示例如下:**  将以下两个参数传入加密哈希函数(MD5)
+
 1 要进行签名的字符串
-    "method=accounts"
+  
+     "method=accounts"
 2 使用SHA1加密后的SecretKey
+
     2a72********a5c6a6dafc2
+    
 3 然后将这个两个参数进行MD5加密的结果作为签名值
 
 如果登录失败会自动断开链接
